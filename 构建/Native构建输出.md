@@ -69,7 +69,19 @@ Finished generating 'helloworld' in 17.0s.
 
 ### 初始化
 
+这个阶段就是启动构建程序，初始化[Feature](https://www.graalvm.org/sdk/javadoc/org/graalvm/nativeimage/hosted/Feature.html)。
 
+#### 本地镜像的种类
+
+本地镜像默认生成*可执行文件*，但是也可以生成[*本地共享库*](../与本地代码的互操作/与本地代码的互操作.md)和[*静态可执行文件*](https://www.graalvm.org/jdk21/reference-manual/native-image/guides/build-static-executables/)。
+
+#### Java版本信息
+
+本地镜像程序的Java和提供商信息。即`java.vm.version`和`java.vendor.version`。
+
+#### Graal编译器
+
+它要处理所选的优化级别以及对应的机器类型。可以用`-O`设置优化级别，默认是`2`，代表激进的优化。`-Ob`启动快速构建模式，加速[编译阶段]()。
 
 ## 资源使用统计
 
